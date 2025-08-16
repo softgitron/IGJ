@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmvfhv47h66c0"
-path="res://.godot/imported/Enemy.png-1fdec3767c51e17a36fae7a797b7dc09.ctex"
+uid="uid://djxip0jsx0nnl"
+path="res://.godot/imported/TeeleporterOn.png-7e50edfcc420bcf14d76e982ab93580a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Teleportation_assets/art/Enemy.png"
-dest_files=["res://.godot/imported/Enemy.png-1fdec3767c51e17a36fae7a797b7dc09.ctex"]
+source_file="res://Sprites/Teleporter/Graphics/TeeleporterOn.png"
+dest_files=["res://.godot/imported/TeeleporterOn.png-7e50edfcc420bcf14d76e982ab93580a.ctex"]
 
 [params]
 

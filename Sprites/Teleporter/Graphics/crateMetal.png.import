@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d35v74p1lvqnm"
-path="res://.godot/imported/bullet.png-9360f0d688f23c7f09badd2894ee2e36.ctex"
+uid="uid://cjbljyjtor6tl"
+path="res://.godot/imported/crateMetal.png-1b47c1396bbcbb160cca13fd03e9c395.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Teleportation_assets/art/bullet.png"
-dest_files=["res://.godot/imported/bullet.png-9360f0d688f23c7f09badd2894ee2e36.ctex"]
+source_file="res://Sprites/Teleporter/Graphics/crateMetal.png"
+dest_files=["res://.godot/imported/crateMetal.png-1b47c1396bbcbb160cca13fd03e9c395.ctex"]
 
 [params]
 

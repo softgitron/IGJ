@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c541y1kpma34d"
-path="res://.godot/imported/TeeleporterOff.png-a6621a33c976a7016afd390b4cf601d5.ctex"
+uid="uid://d35v74p1lvqnm"
+path="res://.godot/imported/bullet.png-b49ba0b27464cdd8fa64be1347e4b2be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Teleportation_assets/art/TeeleporterOff.png"
-dest_files=["res://.godot/imported/TeeleporterOff.png-a6621a33c976a7016afd390b4cf601d5.ctex"]
+source_file="res://Sprites/Teleporter/Graphics/bullet.png"
+dest_files=["res://.godot/imported/bullet.png-b49ba0b27464cdd8fa64be1347e4b2be.ctex"]
 
 [params]
 

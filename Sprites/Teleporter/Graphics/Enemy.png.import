@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wltq1fpjts5h"
-path="res://.godot/imported/Console.png-4f078fef7d05d61f1d45816c3e01b59b.ctex"
+uid="uid://bmvfhv47h66c0"
+path="res://.godot/imported/Enemy.png-f16a0b2c303a330af065b3c6134a0a96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Teleportation_assets/art/Console.png"
-dest_files=["res://.godot/imported/Console.png-4f078fef7d05d61f1d45816c3e01b59b.ctex"]
+source_file="res://Sprites/Teleporter/Graphics/Enemy.png"
+dest_files=["res://.godot/imported/Enemy.png-f16a0b2c303a330af065b3c6134a0a96.ctex"]
 
 [params]
 
