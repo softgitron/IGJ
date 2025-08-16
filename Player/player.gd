@@ -37,6 +37,7 @@ func handle_time_travel():
 
 
 func handle_movement_input():
+
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
@@ -46,9 +47,14 @@ func handle_movement_input():
 		velocity.y += 1
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
-
+		$AnimatedSprite2D.animation = "up"
+	print(velocity)
 	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
+		velocity = velocity * speed
+		
+		$AnimatedSprite2D.play()
+	else:
+		$AnimatedSprite2D.stop()
 
 
 func _physics_process(_delta):
