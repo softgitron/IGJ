@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c541y1kpma34d"
-path="res://.godot/imported/TeeleporterOff.png-161a75cf47c30d9fc3c8636a9678ce8d.ctex"
+path="res://.godot/imported/TeeleporterOff.png-a6621a33c976a7016afd390b4cf601d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/TeeleporterOff.png"
-dest_files=["res://.godot/imported/TeeleporterOff.png-161a75cf47c30d9fc3c8636a9678ce8d.ctex"]
+source_file="res://Teleportation_assets/art/TeeleporterOff.png"
+dest_files=["res://.godot/imported/TeeleporterOff.png-a6621a33c976a7016afd390b4cf601d5.ctex"]
 
 [params]
 
