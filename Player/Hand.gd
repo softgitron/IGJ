@@ -3,6 +3,7 @@ extends Area2D
 var interactable_in_range: Node2D = null
 var item = Enums.ITEM_NAMES.NONE
 
+signal inventory_changed(item_name: String)
 
 func handle_use_input():
 	if not Input.is_action_just_released("use"):
@@ -15,9 +16,11 @@ func handle_use_input():
 		else:
 			table.item_name = item
 			item = Enums.ITEM_NAMES.NONE
+			
 	elif interactable_in_range is TeleporterConsole:
 		var teleporterConsole: TeleporterConsole = interactable_in_range
 		item = teleporterConsole.use(item)
+	emit_signal("inventory_changed",item)
 
 
 func _physics_process(_delta):
