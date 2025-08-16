@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://syju5upvveq7"]
+
+[ext_resource type="Script" uid="uid://cc25wy113ni37" path="res://Ui_Components/ui_date_time.gd" id="1_0cc4n"]
+[ext_resource type="Texture2D" uid="uid://jlja57nnscbx" path="res://Ui_Components/art/ui_clock.png" id="1_84u5a"]
+
+[node name="UI_DateTime" type="CanvasLayer"]
+script = ExtResource("1_0cc4n")
+
+[node name="PlayTimer" type="Timer" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DateTimeBG" type="TextureRect" parent="Control"]
+offset_left = 989.0
+offset_top = 204.0
+offset_right = 1145.0
+offset_bottom = 250.0
+texture = ExtResource("1_84u5a")
+
+[node name="Time" type="Label" parent="Control"]
+offset_left = 1028.0
+offset_top = 217.0
+offset_right = 1085.0
+offset_bottom = 240.0
+text = "TEMP"
