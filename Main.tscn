@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://cpvcl2evatg8p"]
+[gd_scene load_steps=9 format=4 uid="uid://cpvcl2evatg8p"]
 
 [ext_resource type="Script" uid="uid://pgsu5rlq6l3a" path="res://main.gd" id="1_lgr22"]
 [ext_resource type="PackedScene" uid="uid://l24b45bswjqd" path="res://Maps/MapBase.tscn" id="1_uu6xs"]
@@ -8,38 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://blnqrmfnj2ko8" path="res://Sprites/Teleporter/Teleporter.tscn" id="5_fos0i"]
 [ext_resource type="PackedScene" uid="uid://cw1rjnkmhf7xx" path="res://Ui_Components/ui_main.tscn" id="6_3dxm6"]
 [ext_resource type="TileSet" uid="uid://b2aeqbhsu3adm" path="res://TomiFolder/WorldTileSet.tres" id="8_trn2v"]
-
-[sub_resource type="GDScript" id="GDScript_fos0i"]
-script/source = "extends CharacterBody2D
-
-@export var speed = 500
-
-func handle_movement_input():
-	velocity = Vector2.ZERO
-	if Input.is_action_pressed(\"move_right\"):
-		velocity.x += 1
-		$AnimatedSprite2D.animation = \"right\"
-	if Input.is_action_pressed(\"move_left\"):
-		velocity.x -= 1
-		$AnimatedSprite2D.animation = \"left\"
-	if Input.is_action_pressed(\"move_down\"):
-		velocity.y += 1
-		$AnimatedSprite2D.animation = \"down\"
-	if Input.is_action_pressed(\"move_up\"):
-		velocity.y -= 1
-		$AnimatedSprite2D.animation = \"up\"
-
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.play()
-	else:
-		$AnimatedSprite2D.stop()
-
-
-func _physics_process(_delta):
-	handle_movement_input()
-	move_and_slide()
-"
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_lgr22")
@@ -93,5 +61,6 @@ position = Vector2(949, -138)
 target = NodePath("../Teleporter")
 
 [node name="Player" parent="." instance=ExtResource("2_r0du0")]
-position = Vector2(137, 154)
+position = Vector2(870, 916)
+
 [node name="UiMain" parent="." instance=ExtResource("6_3dxm6")]

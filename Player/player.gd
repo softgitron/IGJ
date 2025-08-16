@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 100
+@export var speed = 500
 @export var cooldownInFrames = 180
 
 var cooldownRemaining = 0
@@ -47,14 +47,10 @@ func handle_movement_input():
 		velocity.y += 1
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
-		$AnimatedSprite2D.animation = "up"
-	print(velocity)
 	if velocity.length() > 0:
 		velocity = velocity * speed
 		
-		$AnimatedSprite2D.play()
-	else:
-		$AnimatedSprite2D.stop()
+		
 
 
 func _physics_process(_delta):

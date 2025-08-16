@@ -10,10 +10,10 @@ layer = 8
 script = ExtResource("1_kqtj8")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 1639.0
-offset_top = 3.0
-offset_right = 1917.0
-offset_bottom = 639.0
+offset_left = 1435.0
+offset_top = -2.0
+offset_right = 1918.0
+offset_bottom = 1080.0
 texture = ExtResource("2_koif3")
 
 [node name="Control" type="Control" parent="."]
@@ -21,15 +21,17 @@ layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -208.0
-offset_bottom = 635.0
+offset_left = -473.0
+offset_bottom = 1078.0
 grow_horizontal = 0
 
 [node name="UiInventory" parent="Control" instance=ExtResource("1_mfk5n")]
 layout_mode = 2
-offset_left = 6.0
-offset_top = 41.0
-offset_right = 177.0
-offset_bottom = 158.0
+anchors_preset = 0
+offset_left = -133.5
+offset_top = 262.0
+offset_right = 119.5
+offset_bottom = 453.0
 
 [node name="UI_DateTime" parent="Control" instance=ExtResource("3_5xhoq")]
+layout_mode = 1
