@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bt5gya3fyeavt"]
 
-[ext_resource type="Texture2D" uid="uid://blco70kh4isyd" path="res://Assets/Custom_assets/crateMedival.png" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://cjbljyjtor6tl" path="res://Teleportation_assets/art/crateMetal.png" id="1_wtcfe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
 size = Vector2(96, 47)
