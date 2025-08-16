@@ -32,7 +32,7 @@ func _on_player_detection_area_entered(area: Area2D) -> void:
 		player_target = area.get_parent()
 		speed = catch_speed
 
-
+   
 func _on_player_loose_area_exited(area: Area2D) -> void:
 	if area.get_parent() is Player:
 		player_target = null
