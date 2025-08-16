@@ -1,23 +1,23 @@
-[gd_scene load_steps=11 format=3 uid="uid://de8sga0vaepvf"]
+[gd_scene load_steps=11 format=3 uid="uid://dmtvqrry5tpr"]
 
-[ext_resource type="Script" uid="uid://dqmsngft274an" path="res://Player/player.gd" id="1_q3lat"]
-[ext_resource type="Texture2D" uid="uid://cuh3l7ace80by" path="res://Player/Graphics/DevelopmentPlayer.png" id="2_tok1r"]
-[ext_resource type="Script" uid="uid://bphkead1xmd1m" path="res://Player/Hand.gd" id="3_tok1r"]
+[ext_resource type="Script" uid="uid://dqmsngft274an" path="res://Player/player.gd" id="1_d5jxe"]
+[ext_resource type="Texture2D" uid="uid://cuh3l7ace80by" path="res://Player/Graphics/DevelopmentPlayer.png" id="2_0ljna"]
+[ext_resource type="Script" uid="uid://bphkead1xmd1m" path="res://Player/Hand.gd" id="3_wmuc3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8g4oa"]
-atlas = ExtResource("2_tok1r")
+atlas = ExtResource("2_0ljna")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ysni"]
-atlas = ExtResource("2_tok1r")
+atlas = ExtResource("2_0ljna")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vlldt"]
-atlas = ExtResource("2_tok1r")
+atlas = ExtResource("2_0ljna")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s1rgi"]
-atlas = ExtResource("2_tok1r")
+atlas = ExtResource("2_0ljna")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j23h2"]
@@ -62,7 +62,7 @@ radius = 40.0
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
-script = ExtResource("1_q3lat")
+script = ExtResource("1_d5jxe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_j23h2")
@@ -72,7 +72,7 @@ animation = &"right"
 shape = SubResource("CircleShape2D_q3lat")
 
 [node name="Hand" type="Area2D" parent="."]
-script = ExtResource("3_tok1r")
+script = ExtResource("3_wmuc3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hand"]
 shape = SubResource("CircleShape2D_tok1r")
