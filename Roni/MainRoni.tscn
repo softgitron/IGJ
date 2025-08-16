@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://db1bu7ekqstqh"]
+[gd_scene load_steps=8 format=3 uid="uid://db1bu7ekqstqh"]
 
 [ext_resource type="PackedScene" uid="uid://l24b45bswjqd" path="res://Maps/MapBase.tscn" id="1_4o0p3"]
 [ext_resource type="PackedScene" uid="uid://de8sga0vaepvf" path="res://Player/Player.tscn" id="2_6hrj4"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dusvrmnben153" path="res://Sprites/Teleporter/TeleporterConsole.tscn" id="4_gj2h3"]
 [ext_resource type="PackedScene" uid="uid://blnqrmfnj2ko8" path="res://Sprites/Teleporter/Teleporter.tscn" id="5_88v1i"]
 [ext_resource type="PackedScene" uid="uid://c0fyqbwjppph3" path="res://Sprites/TimePolice/TimePolice.tscn" id="6_msmt4"]
+[ext_resource type="PackedScene" uid="uid://cfd1vagpetvjp" path="res://Sprites/Guard/Guard.tscn" id="7_1e5jb"]
 
 [node name="Main" type="Node2D"]
 
@@ -36,8 +37,26 @@ position = Vector2(512, 85)
 target = NodePath("../Teleporter")
 
 [node name="TimePolice" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_msmt4")]
-position = Vector2(231, 440)
+position = Vector2(92, 592)
 target = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("2_6hrj4")]
 position = Vector2(139, 145)
+
+[node name="Path" type="Node2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="Path"]
+position = Vector2(626, 154)
+
+[node name="Node2D2" type="Node2D" parent="Path"]
+position = Vector2(395, 136)
+
+[node name="Node2D3" type="Node2D" parent="Path"]
+position = Vector2(333, 244)
+
+[node name="Node2D4" type="Node2D" parent="Path"]
+position = Vector2(600, 278)
+
+[node name="Guard" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("7_1e5jb")]
+position = Vector2(633, 239)
+targets = [NodePath("../Path/Node2D"), NodePath("../Path/Node2D2"), NodePath("../Path/Node2D3"), NodePath("../Path/Node2D4")]
