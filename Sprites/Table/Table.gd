@@ -2,7 +2,7 @@ class_name Table
 
 extends Area2D
 
-var shovel_texture = load("res://Items/Graphics/DevelopmentShovel.png")
+var shovel_texture = load("res://Items/Graphics/Shovel.png")
 var key_texture = load("res://Items/Graphics/ActivationKey.png")
 
 var _item_name: Enums.ITEM_NAMES
@@ -23,5 +23,7 @@ func update_item_texture():
 			$ItemDisplayer.texture = null
 		Enums.ITEM_NAMES.SHOVEL:
 			$ItemDisplayer.texture = shovel_texture
+			$ItemDisplayer.scale = Vector2(1,1)
+			$ItemDisplayer.set_rotation_degrees(90)
 		Enums.ITEM_NAMES.TELEPORTER_KEY:
 			$ItemDisplayer.texture = key_texture
