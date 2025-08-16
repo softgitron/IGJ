@@ -1,8 +1,12 @@
 extends CharacterBody2D
 
-@export var speed = 100
+@export var speed = 1100
+
+func _ready() -> void:
+	print("sada")
 
 func handle_movement_input():
+
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
@@ -16,9 +20,10 @@ func handle_movement_input():
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
 		$AnimatedSprite2D.animation = "up"
-
+	print(velocity)
 	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
+		velocity = velocity * speed
+		
 		$AnimatedSprite2D.play()
 	else:
 		$AnimatedSprite2D.stop()
