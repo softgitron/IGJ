@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://syju5upvveq7"]
+
+[ext_resource type="Script" uid="uid://cc25wy113ni37" path="res://Ui_Components/ui_date_time.gd" id="1_0cc4n"]
+[ext_resource type="Texture2D" uid="uid://jlja57nnscbx" path="res://Ui_Components/art/ui_clock.png" id="1_84u5a"]
+
+[node name="UI_DateTime" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0cc4n")
+
+[node name="DateTimeBG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -78.0
+offset_top = -24.0
+offset_right = 78.0
+offset_bottom = 22.0
+texture = ExtResource("1_84u5a")
+
+[node name="Time" type="Label" parent="."]
+layout_mode = 0
+offset_left = -24.0
+offset_top = -14.0
+offset_right = 33.0
+offset_bottom = 9.0
+text = "TEMP"

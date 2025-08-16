@@ -5,7 +5,7 @@ const PRESENT_YEAR = 2000
 const FUTURE_COLLISION_ID = 3
 const PRESENT_COLLISION_ID = 2
 
-@export var speed = 100
+@export var speed = 500
 @export var cooldown_in_frames = 180
 
 var cooldown_remaining = 0
@@ -65,25 +65,20 @@ func scan_for_temporal_anomalies():
 	return $TemporalScanner.has_overlapping_bodies()
 
 func handle_movement_input():
+
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
-		$AnimatedSprite2D.animation = "right"
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= 1
-		$AnimatedSprite2D.animation = "left"
 	if Input.is_action_pressed("move_down"):
 		velocity.y += 1
-		$AnimatedSprite2D.animation = "down"
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
-		$AnimatedSprite2D.animation = "up"
-
 	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.play()
-	else:
-		$AnimatedSprite2D.stop()
+		velocity = velocity * speed
+		
+		
 
 
 func _physics_process(_delta):
