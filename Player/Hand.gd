@@ -18,7 +18,7 @@ signal inventory_changed(item_name: String)
 func handle_use_input():
 	if not Input.is_action_just_released("use"):
 		return
-	if interactable_in_range is Table:
+	if interactable_in_range is Table and interactable_in_range.visible == true:
 		var table: Table = interactable_in_range
 		if table.item_name != Enums.ITEM_NAMES.NONE:
 			item = table.item_name
