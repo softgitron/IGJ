@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn3yg17f5ybl6"
-path="res://.godot/imported/crateMedival.png-0dd0490f722e4abe57d499897a24a9ba.ctex"
+uid="uid://c541y1kpma34d"
+path="res://.godot/imported/TeeleporterOff.png-3bd41ac94711f40e6ea1a9f267c9ab4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Teleportation_assets/art/crateMedival.png"
-dest_files=["res://.godot/imported/crateMedival.png-0dd0490f722e4abe57d499897a24a9ba.ctex"]
+source_file="res://Sprites/Teleporter/Graphics/TeeleporterOff.png"
+dest_files=["res://.godot/imported/TeeleporterOff.png-3bd41ac94711f40e6ea1a9f267c9ab4d.ctex"]
 
 [params]
 
