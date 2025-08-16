@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=4 uid="uid://bq320i0an783t"]
 
-[ext_resource type="Script" uid="uid://oplocfdse4me" path="res://TomiFolder/FutureParentNodeScript.gd" id="1_eb32r"]
+[ext_resource type="Script" uid="uid://oplocfdse4me" path="res://Scripts/FutureParentNodeScript.gd" id="1_eb32r"]
 [ext_resource type="TileSet" uid="uid://b2aeqbhsu3adm" path="res://TomiFolder/WorldTileSet.tres" id="1_ojsvv"]
-[ext_resource type="Script" uid="uid://dupuen7y6elku" path="res://TomiFolder/PresentParentNodeScript.gd" id="3_5e636"]
-[ext_resource type="PackedScene" uid="uid://ywef1mhkw843" path="res://TomiFolder/PlayerTomi.tscn" id="4_eb32r"]
+[ext_resource type="PackedScene" uid="uid://de8sga0vaepvf" path="res://Player/Player.tscn" id="2_feman"]
+[ext_resource type="Script" uid="uid://dupuen7y6elku" path="res://Scripts/PresentParentNodeScript.gd" id="3_5e636"]
 
 [node name="TomiScene" type="Node2D"]
 
@@ -44,7 +44,4 @@ tile_set = ExtResource("1_ojsvv")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(479, 282)
 
-[node name="Player" parent="." instance=ExtResource("4_eb32r")]
-
-[connection signal="time_travel" from="Player" to="Future" method="_on_player_time_travel"]
-[connection signal="time_travel" from="Player" to="Present" method="_on_player_time_travel"]
+[node name="Player2" parent="." instance=ExtResource("2_feman")]
