@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0fyqbwjppph3"]
+
+[ext_resource type="Script" uid="uid://bk5k4sh33gl4h" path="res://Sprites/TimePolice/TimePolice.gd" id="1_3i5ta"]
+[ext_resource type="Texture2D" uid="uid://0ey7iw4jwavw" path="res://Assets/kenney_top-down-shooter/PNG/Man Blue/manBlue_gun.png" id="1_i1w5l"]
+[ext_resource type="Script" uid="uid://d1fhjd8mvxfbg" path="res://Scripts/CharacterAnimationController.gd" id="3_7yqoq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ihoh1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3i5ta"]
+radius = 35.0
+
+[node name="TimePolice" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_3i5ta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+shape = SubResource("CircleShape2D_ihoh1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." node_paths=PackedStringArray("physics_body")]
+process_mode = 3
+texture = ExtResource("1_i1w5l")
+script = ExtResource("3_7yqoq")
+physics_body = NodePath("..")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_3i5ta")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

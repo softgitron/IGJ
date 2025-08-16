@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpvcl2evatg8p"]
+[gd_scene load_steps=6 format=3 uid="uid://cpvcl2evatg8p"]
 
 [ext_resource type="PackedScene" uid="uid://l24b45bswjqd" path="res://Maps/MapBase.tscn" id="1_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://de8sga0vaepvf" path="res://Player/Player.tscn" id="2_r0du0"]
@@ -6,45 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dusvrmnben153" path="res://Sprites/Teleporter/TeleporterConsole.tscn" id="4_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://blnqrmfnj2ko8" path="res://Sprites/Teleporter/Teleporter.tscn" id="5_fos0i"]
 
-[sub_resource type="GDScript" id="GDScript_fos0i"]
-script/source = "extends CharacterBody2D
-
-@export var speed = 100
-
-func handle_movement_input():
-	velocity = Vector2.ZERO
-	if Input.is_action_pressed(\"move_right\"):
-		velocity.x += 1
-		$AnimatedSprite2D.animation = \"right\"
-	if Input.is_action_pressed(\"move_left\"):
-		velocity.x -= 1
-		$AnimatedSprite2D.animation = \"left\"
-	if Input.is_action_pressed(\"move_down\"):
-		velocity.y += 1
-		$AnimatedSprite2D.animation = \"down\"
-	if Input.is_action_pressed(\"move_up\"):
-		velocity.y -= 1
-		$AnimatedSprite2D.animation = \"up\"
-
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.play()
-	else:
-		$AnimatedSprite2D.stop()
-
-
-func _physics_process(_delta):
-	handle_movement_input()
-	move_and_slide()
-"
-
 [node name="Main" type="Node2D"]
 
 [node name="MapBase" parent="." instance=ExtResource("1_uu6xs")]
-
-[node name="Player" parent="." instance=ExtResource("2_r0du0")]
-position = Vector2(130, 147)
-script = SubResource("GDScript_fos0i")
 
 [node name="ShovelTable" parent="." instance=ExtResource("3_r0du0")]
 position = Vector2(359, 71)
@@ -69,3 +33,6 @@ target = NodePath("../Teleporter2")
 [node name="Teleporter2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_fos0i")]
 position = Vector2(512, 85)
 target = NodePath("../Teleporter")
+
+[node name="Player" parent="." instance=ExtResource("2_r0du0")]
+position = Vector2(137, 154)
