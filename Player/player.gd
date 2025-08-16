@@ -1,6 +1,23 @@
 extends CharacterBody2D
 
 @export var speed = 100
+var currentItem: String = ""
+
+signal inventory_changed(item_name: String)
+
+func has_item(item_name:String)->bool:
+	return currentItem==item_name
+	
+func remove_item()->String:
+	var temp = currentItem
+	currentItem=""
+	return temp
+	
+func pickup_item(item_name:String)->void:
+	if currentItem=="":
+		currentItem=item_name
+		emit_signal("inventory_changed", item_name)
+	
 
 func get_input():
 	velocity = Vector2.ZERO

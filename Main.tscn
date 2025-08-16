@@ -1,11 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpvcl2evatg8p"]
+[gd_scene load_steps=6 format=3 uid="uid://cpvcl2evatg8p"]
 
+[ext_resource type="Script" uid="uid://63udaaqf7rp3" path="res://main.gd" id="1_fos0i"]
 [ext_resource type="PackedScene" uid="uid://l24b45bswjqd" path="res://Maps/MapBase.tscn" id="1_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://de8sga0vaepvf" path="res://Player/Player.tscn" id="2_r0du0"]
+[ext_resource type="PackedScene" uid="uid://cw1rjnkmhf7xx" path="res://Ui_Components/ui_main.tscn" id="3_r0du0"]
+[ext_resource type="PackedScene" uid="uid://qchaxxjqoi2m" path="res://Teleportation_assets/activation_key.tscn" id="4_cm0pq"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_fos0i")
 
 [node name="MapBase" parent="." instance=ExtResource("1_uu6xs")]
 
 [node name="Player" parent="." instance=ExtResource("2_r0du0")]
 position = Vector2(130, 147)
+
+[node name="UiMain" parent="." instance=ExtResource("3_r0du0")]
+offset = Vector2(280, 0)
+transform = Transform2D(1, 0, 0, 1, 280, 0)
+
+[node name="ActivationKey" parent="." instance=ExtResource("4_cm0pq")]
+position = Vector2(180, 95)
