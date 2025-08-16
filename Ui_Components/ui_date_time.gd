@@ -1,7 +1,7 @@
-extends CanvasLayer
+extends Control
 
 
-@onready var timer_label = $Control/Time
+@onready var timer_label = $Time
 var time_elapsed: float = 0.0
 var running := false
 

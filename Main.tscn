@@ -15,8 +15,6 @@ script = ExtResource("1_fos0i")
 position = Vector2(130, 147)
 
 [node name="UiMain" parent="." instance=ExtResource("3_r0du0")]
-offset = Vector2(900, 0)
-transform = Transform2D(1, 0, 0, 1, 900, 0)
 
 [node name="ActivationKey" parent="." instance=ExtResource("4_cm0pq")]
 position = Vector2(180, 95)
