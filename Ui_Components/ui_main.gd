@@ -17,6 +17,7 @@ var item_list={
 var is_holding := false
 
 var police_lvl=0
+var kiikku = 0
 
 func connect_to_players_hands(player: Node):
 	player.inventory_changed.connect(_on_player_inventory_change)
@@ -24,6 +25,8 @@ func connect_to_players_hands(player: Node):
 
 func connect_to_player(player: Node):
 	player.time_travel.connect(_player_time)
+	player.tell_travel_status.connect(_set_status_light)
+	
 
 func _on_player_inventory_change(item):
 	var child = $Control/UiInventory
@@ -37,26 +40,38 @@ func _player_time(new_year:int):
 	current_year=new_year
 	check_holding_state()
 
+func _set_status_light(status:String):
+	print(status)
+	if status =="yes":
+		$Control/InfoLight/StatusLight.modulate = Color(0, 1, 0)
+		
+	elif status =="no":
+		$Control/InfoLight/StatusLight.modulate = Color(1,0 , 0)
+		
+	elif status =="cooldown":
+		$Control/InfoLight/StatusLight.modulate = Color(0, 0, 1)
+		
+	
 
 func _process(delta: float) -> void:
-	if (!is_holding):
-		hold_timer.wait_time += delta
-		hold_meter.value = hold_meter.max_value - hold_timer.time_left
 	if (hold_timer.time_left > 0 && is_holding):
 		# Update meter smoothly as timer runs down
 		hold_meter.value = hold_meter.max_value - hold_timer.time_left
+	else:
+		if(hold_meter.value>0):
+			kiikku += delta/3
+			if(kiikku>0.1):
+				hold_meter.value -=kiikku
+				kiikku=0
+			
 
 
 
 func start_hold():
-	if(hold_timer.time_left>0):
-		hold_timer.wait_time = hold_timer.time_left
-	else:
-		hold_timer.wait_time = hold_meter.max_value
+	hold_timer.wait_time = hold_meter.max_value- hold_meter.value
 	hold_timer.start()
 
 func stop_hold():
-	hold_meter.value = hold_meter.max_value - hold_timer.time_left
 	hold_timer.stop()
 
 func  _on_hold_timer_timeout():

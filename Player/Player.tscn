@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dqmsngft274an" path="res://Player/player.gd" id="1_q3lat"]
 [ext_resource type="Texture2D" uid="uid://disiteblpedi8" path="res://Assets/kenney_top-down-shooter/PNG/Hitman 1/hitman1_hold.png" id="2_ddoul"]
-[ext_resource type="Script" path="res://Scripts/CharacterAnimationController.gd" id="3_ddoul"]
+[ext_resource type="Script" uid="uid://d1fhjd8mvxfbg" path="res://Scripts/CharacterAnimationController.gd" id="3_ddoul"]
 [ext_resource type="Script" uid="uid://bphkead1xmd1m" path="res://Player/Hand.gd" id="3_tok1r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q3lat"]
