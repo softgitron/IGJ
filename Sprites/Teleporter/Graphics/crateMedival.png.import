@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byeqg6vuvhq44"
-path="res://.godot/imported/activationKey.png-97ff3dfc6467176fddf2e129254b3957.ctex"
+uid="uid://dn3yg17f5ybl6"
+path="res://.godot/imported/crateMedival.png-9cdcde88598a16b0b4bb95263e934e23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Teleportation_assets/art/activationKey.png"
-dest_files=["res://.godot/imported/activationKey.png-97ff3dfc6467176fddf2e129254b3957.ctex"]
+source_file="res://Sprites/Teleporter/Graphics/crateMedival.png"
+dest_files=["res://.godot/imported/crateMedival.png-9cdcde88598a16b0b4bb95263e934e23.ctex"]
 
 [params]
 

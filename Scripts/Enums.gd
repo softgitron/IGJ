@@ -2,4 +2,4 @@ class_name Items
 
 extends Node
 
-enum ITEM_NAMES {NONE, SHOVEL}
+enum ITEM_NAMES {NONE, SHOVEL, TELEPORTER_KEY}

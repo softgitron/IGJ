@@ -1,10 +1,43 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpvcl2evatg8p"]
+[gd_scene load_steps=7 format=3 uid="uid://cpvcl2evatg8p"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_fos0i"]
 [ext_resource type="PackedScene" uid="uid://l24b45bswjqd" path="res://Maps/MapBase.tscn" id="1_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://de8sga0vaepvf" path="res://Player/Player.tscn" id="2_r0du0"]
-[ext_resource type="PackedScene" uid="uid://cw1rjnkmhf7xx" path="res://Ui_Components/ui_main.tscn" id="3_r0du0"]
-[ext_resource type="PackedScene" uid="uid://qchaxxjqoi2m" path="res://Teleportation_assets/activation_key.tscn" id="4_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://dc6co7mbuk18k" path="res://Sprites/Table/Table.tscn" id="3_r0du0"]
+[ext_resource type="PackedScene" uid="uid://dusvrmnben153" path="res://Sprites/Teleporter/TeleporterConsole.tscn" id="4_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://blnqrmfnj2ko8" path="res://Sprites/Teleporter/Teleporter.tscn" id="5_fos0i"]
+
+[sub_resource type="GDScript" id="GDScript_fos0i"]
+script/source = "extends CharacterBody2D
+
+@export var speed = 100
+
+func handle_movement_input():
+	velocity = Vector2.ZERO
+	if Input.is_action_pressed(\"move_right\"):
+		velocity.x += 1
+		$AnimatedSprite2D.animation = \"right\"
+	if Input.is_action_pressed(\"move_left\"):
+		velocity.x -= 1
+		$AnimatedSprite2D.animation = \"left\"
+	if Input.is_action_pressed(\"move_down\"):
+		velocity.y += 1
+		$AnimatedSprite2D.animation = \"down\"
+	if Input.is_action_pressed(\"move_up\"):
+		velocity.y -= 1
+		$AnimatedSprite2D.animation = \"up\"
+
+	if velocity.length() > 0:
+		velocity = velocity.normalized() * speed
+		$AnimatedSprite2D.play()
+	else:
+		$AnimatedSprite2D.stop()
+
+
+func _physics_process(_delta):
+	handle_movement_input()
+	move_and_slide()
+"
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_fos0i")
@@ -13,11 +46,31 @@ script = ExtResource("1_fos0i")
 
 [node name="Player" parent="." instance=ExtResource("2_r0du0")]
 position = Vector2(130, 147)
+script = SubResource("GDScript_fos0i")
 
 [node name="UiMain" parent="." instance=ExtResource("3_r0du0")]
 
-[node name="ActivationKey" parent="." instance=ExtResource("4_cm0pq")]
-position = Vector2(180, 95)
 
-[node name="Shovel" parent="." instance=ExtResource("3_r0du0")]
-visible = false
+[node name="ShovelTable" parent="." instance=ExtResource("3_r0du0")]
+position = Vector2(359, 71)
+item_name = 1
+
+[node name="TeleporterTable" parent="." instance=ExtResource("3_r0du0")]
+position = Vector2(80, 231)
+item_name = 2
+
+[node name="EmptyTable" parent="." instance=ExtResource("3_r0du0")]
+position = Vector2(442, 297)
+
+[node name="TeleporterConsole" parent="." node_paths=PackedStringArray("teleporter_a", "teleporter_b") instance=ExtResource("4_cm0pq")]
+position = Vector2(260, 171)
+teleporter_a = NodePath("../Teleporter")
+teleporter_b = NodePath("../Teleporter2")
+
+[node name="Teleporter" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_fos0i")]
+position = Vector2(256, 282)
+target = NodePath("../Teleporter2")
+
+[node name="Teleporter2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_fos0i")]
+position = Vector2(512, 85)
+target = NodePath("../Teleporter")

@@ -41,6 +41,6 @@ func handle_movement_input():
 		$AnimatedSprite2D.stop()
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	handle_movement_input()
 	move_and_slide()

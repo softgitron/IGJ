@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjbljyjtor6tl"
-path="res://.godot/imported/crateMetal.png-368e7e7cfc092ecb8916cafad52fc175.ctex"
+uid="uid://byeqg6vuvhq44"
+path="res://.godot/imported/ActivationKey.png-667dbec561c76686e6d79f0a3019490c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Teleportation_assets/art/crateMetal.png"
-dest_files=["res://.godot/imported/crateMetal.png-368e7e7cfc092ecb8916cafad52fc175.ctex"]
+source_file="res://Items/Graphics/ActivationKey.png"
+dest_files=["res://.godot/imported/ActivationKey.png-667dbec561c76686e6d79f0a3019490c.ctex"]
 
 [params]
 
