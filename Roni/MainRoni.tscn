@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://blnqrmfnj2ko8" path="res://Sprites/Teleporter/Teleporter.tscn" id="5_88v1i"]
 [ext_resource type="PackedScene" uid="uid://c0fyqbwjppph3" path="res://Sprites/TimePolice/TimePolice.tscn" id="6_msmt4"]
 [ext_resource type="PackedScene" uid="uid://cfd1vagpetvjp" path="res://Sprites/Guard/Guard.tscn" id="7_1e5jb"]
-[ext_resource type="PackedScene" uid="uid://bsliy5vuxgkds" path="res://Sprites/ItemStopper/ItemStopper.tscn" id="8_q3b2d"]
+[ext_resource type="PackedScene" path="res://Sprites/ItemStopper/ItemStopper.tscn" id="8_q3b2d"]
 
 [node name="Main" type="Node2D"]
 
