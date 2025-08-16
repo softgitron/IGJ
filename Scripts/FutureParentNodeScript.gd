@@ -12,10 +12,14 @@ extends Node2D
 #	pass
 
 func _on_player_time_travel(year: int):
-	print("receiving call at Future")
-	print (year)
 	if (year == 2000):
 		visible = false
+		update_children(false, self)
 	if (year == 3000):
 		visible = true
-	pass # Replace with function body.
+		update_children(true, self)
+
+func update_children(status: bool, parent: Node):
+	for child in parent.get_children():
+		child.visible = status
+		update_children(status, child)
