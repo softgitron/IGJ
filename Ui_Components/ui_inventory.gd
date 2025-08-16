@@ -1,10 +1,7 @@
 extends Control
 
-var current_item: String =""
+@export var current_item: String =""
 var has_item:bool=false
-
-var shovel_texture = load("res://Items/Graphics/DevelopmentShovel.png")
-var key_texture = load("res://Items/Graphics/ActivationKey.png")
 
 func _process(delta: float) -> void:
 	pass

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://hhasyktvnfke"]
+
+[ext_resource type="Texture2D" uid="uid://cbwkc5vlatfh5" path="res://Ui_Components/art/ui_policemterBG.png" id="1_6uax4"]
+[ext_resource type="Texture2D" uid="uid://comwkp2nabub8" path="res://Ui_Components/art/ui_policemeter.png" id="2_hfd8e"]
+
+[node name="PoliceMeter" type="TextureProgressBar"]
+offset_right = 40.0
+offset_bottom = 40.0
+fill_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 138.0
+offset_bottom = 300.0
+texture = ExtResource("1_6uax4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_hfd8e")
