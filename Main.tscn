@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cpvcl2evatg8p"]
+[gd_scene load_steps=10 format=3 uid="uid://cpvcl2evatg8p"]
 
 [ext_resource type="Script" uid="uid://pgsu5rlq6l3a" path="res://main.gd" id="1_lgr22"]
 [ext_resource type="PackedScene" uid="uid://l24b45bswjqd" path="res://Maps/MapBase.tscn" id="1_uu6xs"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" path="res://Sprites/Teleporter/TeleporterConsole.tscn" id="4_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://blnqrmfnj2ko8" path="res://Sprites/Teleporter/Teleporter.tscn" id="5_fos0i"]
 [ext_resource type="PackedScene" uid="uid://cw1rjnkmhf7xx" path="res://Ui_Components/ui_main.tscn" id="6_3dxm6"]
+[ext_resource type="TileSet" uid="uid://b2aeqbhsu3adm" path="res://TomiFolder/WorldTileSet.tres" id="8_trn2v"]
 
 [sub_resource type="GDScript" id="GDScript_fos0i"]
 script/source = "extends CharacterBody2D
@@ -44,6 +45,9 @@ func _physics_process(_delta):
 script = ExtResource("1_lgr22")
 
 [node name="MapBase" parent="." instance=ExtResource("1_uu6xs")]
+visible = false
+light_mask = 524288
+visibility_layer = 524288
 
 [node name="Player" parent="." instance=ExtResource("2_r0du0")]
 position = Vector2(130, 147)
@@ -74,3 +78,12 @@ position = Vector2(512, 85)
 target = NodePath("../Teleporter")
 
 [node name="UiMain" parent="." instance=ExtResource("6_3dxm6")]
+
+[node name="Present" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Present"]
+tile_set = ExtResource("8_trn2v")
+
+[node name="Future" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Future"]

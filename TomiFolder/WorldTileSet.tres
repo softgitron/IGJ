@@ -1,6 +1,6 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bomyw30qouqcl"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://b2aeqbhsu3adm"]
 
-[ext_resource type="Texture2D" uid="uid://bjhndp0wrkje2" path="res://Assets/kenney_top-down-shooter/Tilesheet/tilesheet_complete.png" id="1_e7lxg"]
+[ext_resource type="Texture2D" uid="uid://dptjtuw6dhsje" path="res://Assets/kenney_top-down-shooter/Tilesheet/tilesheet_complete.png" id="1_e7lxg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e7lxg"]
 texture = ExtResource("1_e7lxg")
