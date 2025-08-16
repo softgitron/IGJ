@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=4 uid="uid://odo2bjbwauw0"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_lgr22"]
+[ext_resource type="Script" uid="uid://pgsu5rlq6l3a" path="res://main.gd" id="1_lgr22"]
 [ext_resource type="PackedScene" uid="uid://l24b45bswjqd" path="res://Maps/MapBase.tscn" id="1_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://de8sga0vaepvf" path="res://Player/Player.tscn" id="2_r0du0"]
 [ext_resource type="Script" uid="uid://dupuen7y6elku" path="res://Scripts/PresentParentNodeScript.gd" id="2_wkp8b"]
 [ext_resource type="PackedScene" uid="uid://dc6co7mbuk18k" path="res://Sprites/Table/Table.tscn" id="3_r0du0"]
-[ext_resource type="PackedScene" uid="uid://dusvrmnben153" path="res://Sprites/Teleporter/TeleporterConsole.tscn" id="4_cm0pq"]
+[ext_resource type="PackedScene" path="res://Sprites/Teleporter/TeleporterConsole.tscn" id="4_cm0pq"]
 [ext_resource type="Script" uid="uid://oplocfdse4me" path="res://Scripts/FutureParentNodeScript.gd" id="5_20pc6"]
 [ext_resource type="PackedScene" uid="uid://blnqrmfnj2ko8" path="res://Sprites/Teleporter/Teleporter.tscn" id="5_fos0i"]
 [ext_resource type="PackedScene" uid="uid://cw1rjnkmhf7xx" path="res://Ui_Components/ui_main.tscn" id="6_3dxm6"]
