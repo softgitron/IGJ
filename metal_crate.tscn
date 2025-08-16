@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dktlim3hxrcdh"]
+
+[ext_resource type="Texture2D" uid="uid://1nkpshrjd6ky" path="res://Assets/Custom_assets/crateMetal.png" id="1_fmev7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmev7"]
+size = Vector2(75.5, 74)
+
+[node name="MetalCrate" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(42, 43)
+texture = ExtResource("1_fmev7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(0.25, 0)
+shape = SubResource("RectangleShape2D_fmev7")
