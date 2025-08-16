@@ -32,7 +32,7 @@ func _on_player_detection_area_entered(area: Area2D) -> void:
 		player_target = area.get_parent()
 		speed = catch_speed
 
-
+   
 func _on_player_loose_area_exited(area: Area2D) -> void:
 	if area.get_parent() is Player:
 		player_target = null
@@ -41,4 +41,4 @@ func _on_player_loose_area_exited(area: Area2D) -> void:
 
 func _on_kill_player_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:
-		get_tree().paused = true
+		get_tree().change_scene_to_file("res://Menus/GameOverMenu.tscn")

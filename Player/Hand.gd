@@ -1,7 +1,17 @@
 extends Area2D
 
 var interactable_in_range: Node2D = null
-var item = Enums.ITEM_NAMES.NONE
+
+var _item: Enums.ITEM_NAMES = Enums.ITEM_NAMES.NONE
+@export var item : Enums.ITEM_NAMES :
+	get :
+		return _item
+	set(value) :
+		_item = value
+		if (_item):
+			Signals.emit_signal('player_has_items', true)
+		else:
+			Signals.emit_signal('player_has_items', false)
 
 signal inventory_changed(item_name: String)
 

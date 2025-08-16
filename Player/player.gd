@@ -79,7 +79,7 @@ func handle_movement_input():
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
 	if velocity.length() > 0:
-		velocity = velocity * speed
+		velocity = velocity.normalized() * speed
 		
 		
 
