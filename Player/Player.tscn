@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://de8sga0vaepvf"]
+[gd_scene load_steps=11 format=3 uid="uid://de8sga0vaepvf"]
 
-[ext_resource type="Script" uid="uid://dqmsngft274an" path="res://Player/player.gd" id="1_q3lat"]
+[ext_resource type="Script" uid="uid://dqmsngft274an" path="res://Player/Player.gd" id="1_q3lat"]
 [ext_resource type="Texture2D" uid="uid://cuh3l7ace80by" path="res://Player/Graphics/DevelopmentPlayer.png" id="2_tok1r"]
+[ext_resource type="Script" uid="uid://bphkead1xmd1m" path="res://Player/Hand.gd" id="3_tok1r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8g4oa"]
 atlas = ExtResource("2_tok1r")
@@ -57,6 +58,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_q3lat"]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_tok1r"]
+radius = 40.0
+
 motion_mode = 1
 script = ExtResource("1_q3lat")
 
@@ -66,3 +70,12 @@ animation = &"right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_q3lat")
+
+[node name="Hand" type="Area2D" parent="."]
+script = ExtResource("3_tok1r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hand"]
+shape = SubResource("CircleShape2D_tok1r")
+
+[connection signal="area_entered" from="Hand" to="Hand" method="_on_area_entered"]
+[connection signal="area_exited" from="Hand" to="Hand" method="_on_area_exited"]
