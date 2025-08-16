@@ -1,23 +1,23 @@
-[gd_scene load_steps=11 format=3 uid="uid://dmtvqrry5tpr"]
+[gd_scene load_steps=12 format=3 uid="uid://ywef1mhkw843"]
 
-[ext_resource type="Script" uid="uid://dqmsngft274an" path="res://Player/player.gd" id="1_d5jxe"]
-[ext_resource type="Texture2D" uid="uid://cuh3l7ace80by" path="res://Player/Graphics/DevelopmentPlayer.png" id="2_0ljna"]
-[ext_resource type="Script" uid="uid://bphkead1xmd1m" path="res://Player/Hand.gd" id="3_wmuc3"]
+[ext_resource type="Script" uid="uid://dqmsngft274an" path="res://Player/player.gd" id="1_643mx"]
+[ext_resource type="Texture2D" uid="uid://cuh3l7ace80by" path="res://Player/Graphics/DevelopmentPlayer.png" id="2_467c1"]
+[ext_resource type="Script" uid="uid://bphkead1xmd1m" path="res://Player/Hand.gd" id="3_fn8dm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8g4oa"]
-atlas = ExtResource("2_0ljna")
+atlas = ExtResource("2_467c1")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ysni"]
-atlas = ExtResource("2_0ljna")
+atlas = ExtResource("2_467c1")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vlldt"]
-atlas = ExtResource("2_0ljna")
+atlas = ExtResource("2_467c1")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s1rgi"]
-atlas = ExtResource("2_0ljna")
+atlas = ExtResource("2_467c1")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j23h2"]
@@ -60,9 +60,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_tok1r"]
 radius = 40.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_x3ok6"]
+radius = 18.0
+
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 2
 motion_mode = 1
-script = ExtResource("1_d5jxe")
+script = ExtResource("1_643mx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_j23h2")
@@ -72,10 +77,18 @@ animation = &"right"
 shape = SubResource("CircleShape2D_q3lat")
 
 [node name="Hand" type="Area2D" parent="."]
-script = ExtResource("3_wmuc3")
+script = ExtResource("3_fn8dm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hand"]
 shape = SubResource("CircleShape2D_tok1r")
+
+[node name="TemporalScanner" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TemporalScanner"]
+shape = SubResource("CircleShape2D_x3ok6")
+debug_color = Color(0.7, 0.4774, 0.329, 0.282353)
 
 [connection signal="area_entered" from="Hand" to="Hand" method="_on_area_entered"]
 [connection signal="area_exited" from="Hand" to="Hand" method="_on_area_exited"]
