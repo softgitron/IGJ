@@ -10,4 +10,5 @@ func _process(delta: float) -> void:
 func pickup_item(itemName:String):
 	current_item=itemName;
 	var items = $ItemSprite
-	items.texture = load("res://Ui_Components/art/inventory_sprites/activationKey.png")
+	var itemN = current_item+".png"
+	items.texture = load("res://Ui_Components/art/inventory_sprites/"+itemN)
