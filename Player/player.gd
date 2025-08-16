@@ -63,7 +63,9 @@ func change_scanning_year(target_year: int):
 
 	
 func scan_for_temporal_anomalies():
-	return $TemporalScanner.has_overlapping_bodies()
+	if $TemporalScanner.has_overlapping_bodies() or $TemporalScanner.has_overlapping_areas():
+		return true
+	return false
 
 func handle_movement_input():
 
