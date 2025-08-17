@@ -50,10 +50,10 @@ func on_parsing_done() -> void:
 	# have obstruction outlines so add at least one traversable outline
 	# so the obstructions outlines have something to "cut" into.
 	source_geometry.add_traversable_outline(PackedVector2Array([
-		Vector2(0.0, 0.0),
-		Vector2(2000.0, 0.0),
+		Vector2(-2000.0, -2000.0),
+		Vector2(2000.0, -2000.0),
 		Vector2(2000.0, 2000.0),
-		Vector2(0.0, 2000.0)
+		Vector2(-2000.0, 2000.0)
 	]))
 
 	# Bake the navigation mesh on a thread with the source geometry data.
