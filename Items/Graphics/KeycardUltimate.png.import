@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t4yqawihhu70"
-path="res://.godot/imported/SHOVEL.png-92fcae86fe3f91c74a73daf4b0de1019.ctex"
+uid="uid://cib3f5vyevipt"
+path="res://.godot/imported/KeycardUltimate.png-187d0f091cb642be7ab03f2f38e2dcf3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ui_Components/art/inventory_sprites/SHOVEL.png"
-dest_files=["res://.godot/imported/SHOVEL.png-92fcae86fe3f91c74a73daf4b0de1019.ctex"]
+source_file="res://Items/Graphics/KeycardUltimate.png"
+dest_files=["res://.godot/imported/KeycardUltimate.png-187d0f091cb642be7ab03f2f38e2dcf3.ctex"]
 
 [params]
 
