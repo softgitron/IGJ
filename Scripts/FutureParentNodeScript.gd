@@ -21,5 +21,6 @@ func _on_player_time_travel(year: int):
 
 func update_children(status: bool, parent: Node):
 	for child in parent.get_children():
-		child.visible = status
+		if child.get("visible") != null:
+			child.visible = status
 		update_children(status, child)
