@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cspfpw36xtmdx"]
+
+[ext_resource type="Script" uid="uid://cp64vrnywcn18" path="res://Sprites/ResetClock/reset_clock.gd" id="1_e4kub"]
+[ext_resource type="Texture2D" uid="uid://befl3wr2wd0n0" path="res://Sprites/ResetClock/graphics/clock.png" id="1_pb120"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e4kub"]
+radius = 34.2345
+
+[node name="ResetClock" type="Area2D" groups=["pickups"]]
+collision_layer = 6
+collision_mask = 16
+script = ExtResource("1_e4kub")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pb120")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_e4kub")

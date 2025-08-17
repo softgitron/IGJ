@@ -41,7 +41,6 @@ func _player_time(new_year:int):
 	check_holding_state()
 
 func _set_status_light(status:String):
-	print(status)
 	if status =="yes":
 		$Control/InfoLight/StatusLight.modulate = Color(0, 1, 0)
 		
@@ -74,11 +73,19 @@ func start_hold():
 func stop_hold():
 	hold_timer.stop()
 
-func  _on_hold_timer_timeout():
+func _on_hold_timer_timeout():
 	print("Meter full → reset now")
 	hold_meter.value = 0
 	upgrade_level()
 	start_hold()
+	
+func _handle_watch_pickup(strength):
+	if(police_lvl!=0):
+		police_lvl -=strength
+		if(police_lvl<0):
+			police_lvl=0
+		police_level.emit(police_lvl)
+	$Control/PoliceLevel.text = str(police_lvl)
 
 func upgrade_level():
 	hold_meter.value =0
