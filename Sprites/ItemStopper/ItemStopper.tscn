@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsliy5vuxgkds"]
+[gd_scene load_steps=4 format=3 uid="uid://idqtont5eyuh"]
 
 [ext_resource type="Script" uid="uid://bqgft1ubon0xt" path="res://Sprites/ItemStopper/ItemStopper.gd" id="1_uanjf"]
 [ext_resource type="Texture2D" uid="uid://1l6c8w2prgsd" path="res://Sprites/ItemStopper/Graphics/ItemStopperDisabled.png" id="2_uanjf"]
