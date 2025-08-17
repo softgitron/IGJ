@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://f3x1kws02hhv"]
+
+[ext_resource type="Script" uid="uid://bi56rc2286124" path="res://Sprites/Interactables/Interactable.gd" id="1_1rb6x"]
+[ext_resource type="Texture2D" uid="uid://cwhm37amprbbc" path="res://Items/Graphics/LockedWoodenDoor.png" id="2_ika11"]
+
+[sub_resource type="Shader" id="Shader_oxiak"]
+code = "shader_type canvas_item;
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ika11"]
+shader = SubResource("Shader_oxiak")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fodar"]
+radius = 30.0666
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fodar"]
+size = Vector2(66, 20)
+
+[node name="Interactable" type="StaticBody2D" groups=["Interactable"]]
+collision_layer = 65
+script = ExtResource("1_1rb6x")
+
+[node name="InteractableSprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ika11")
+texture = ExtResource("2_ika11")
+
+[node name="CRTCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fodar")
+disabled = true
+
+[node name="DoorCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fodar")
+disabled = true
