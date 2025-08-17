@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfd1vagpetvjp"]
+
+[ext_resource type="Script" uid="uid://c26wq08nfus0b" path="res://Sprites/Guard/Guard.gd" id="1_aerem"]
+[ext_resource type="Texture2D" uid="uid://dyqeacqf2juc7" path="res://Assets/kenney_top-down-shooter/PNG/Man Brown/manBrown_gun.png" id="1_kchof"]
+[ext_resource type="Script" uid="uid://d1fhjd8mvxfbg" path="res://Scripts/CharacterAnimationController.gd" id="2_aerem"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kchof"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aerem"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v35ql"]
+radius = 200.0
+
+[node name="Guard" type="CharacterBody2D"]
+script = ExtResource("1_aerem")
+
+[node name="Sprite2D" type="Sprite2D" parent="." node_paths=PackedStringArray("physics_body")]
+texture = ExtResource("1_kchof")
+script = ExtResource("2_aerem")
+physics_body = NodePath("..")
+
+[node name="PlayerDetection" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Sprite2D/PlayerDetection"]
+polygon = PackedVector2Array(0, 0, 120, -40, 120, 40)
+
+[node name="Polygon2D" type="Polygon2D" parent="Sprite2D/PlayerDetection"]
+modulate = Color(0.607843, 0.219608, 0.243137, 0.619608)
+polygon = PackedVector2Array(0, 0, 120, -40, 120, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kchof")
+
+[node name="KillPlayer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillPlayer"]
+shape = SubResource("CircleShape2D_aerem")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 10.0
+path_postprocessing = 2
+debug_enabled = true
+
+[node name="PlayerLoose" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerLoose"]
+shape = SubResource("CircleShape2D_v35ql")
+
+[connection signal="area_entered" from="Sprite2D/PlayerDetection" to="." method="_on_player_detection_area_entered"]
+[connection signal="area_entered" from="KillPlayer" to="." method="_on_kill_player_area_entered"]
+[connection signal="area_exited" from="PlayerLoose" to="." method="_on_player_loose_area_exited"]

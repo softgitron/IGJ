@@ -19,11 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Enums="*res://Scripts/Enums.gd"
-
-[display]
-
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+Signals="*res://Scripts/Signals.gd"
 
 [input]
 

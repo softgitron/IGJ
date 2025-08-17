@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 const FUTURE_YEAR = 3000
@@ -77,7 +78,9 @@ func change_scanning_year(target_year: int):
 
 	
 func scan_for_temporal_anomalies():
-	return $TemporalScanner.has_overlapping_bodies()
+	if $TemporalScanner.has_overlapping_bodies() or $TemporalScanner.has_overlapping_areas():
+		return true
+	return false
 
 func handle_movement_input():
 
@@ -91,7 +94,7 @@ func handle_movement_input():
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
 	if velocity.length() > 0:
-		velocity = velocity * speed
+		velocity = velocity.normalized() * speed
 		
 		
 

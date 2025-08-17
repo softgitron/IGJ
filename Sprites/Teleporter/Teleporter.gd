@@ -25,7 +25,8 @@ func _on_area_entered(area: Area2D) -> void:
 	if not can_teleport or not active:
 		return
 	
-	if target != null:
+
+	if target != null and visible:
 		area.get_parent().global_position = target.global_position
 		
 		can_teleport = false
