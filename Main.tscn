@@ -77,7 +77,6 @@ tile_set = ExtResource("8_trn2v")
 position = Vector2(870, 916)
 
 [node name="UiMain" parent="." instance=ExtResource("6_3dxm6")]
-visible = false
 
 [node name="TimePolice" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_20pc6")]
 target = NodePath("../Player")
