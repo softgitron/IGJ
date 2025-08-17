@@ -3,11 +3,19 @@ extends CharacterBody2D
 @export var normal_speed = 30
 @export var catch_speed = 60
 @export var turn_speed = 50
+@export var navigation_map: NavigationMap
 @export var targets: Array[Node2D]
 
 var speed = normal_speed
 var current_target = 0
 var player_target: Player
+
+
+func _ready():
+	speed = normal_speed
+	$NavigationAgent2D.set_navigation_map(navigation_map.current_map)
+	NavigationServer2D.agent_set_map($NavigationAgent2D.get_rid(), navigation_map.current_map)
+
 
 func _physics_process(delta):
 	if $NavigationAgent2D.is_navigation_finished():
@@ -15,7 +23,7 @@ func _physics_process(delta):
 	if current_target >= targets.size():
 		current_target = 0
 	
-	if player_target:
+	if player_target and visible:
 		$NavigationAgent2D.target_position = player_target.position
 	else:
 		$NavigationAgent2D.target_position = targets[current_target].position
@@ -40,5 +48,5 @@ func _on_player_loose_area_exited(area: Area2D) -> void:
 
 
 func _on_kill_player_area_entered(area: Area2D) -> void:
-	if area.get_parent() is Player:
+	if area.get_parent() is Player and visible:
 		get_tree().change_scene_to_file("res://Menus/GameOverMenu.tscn")

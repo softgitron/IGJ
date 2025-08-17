@@ -74,6 +74,10 @@ time_travel={
 2d_physics/layer_7="Items"
 2d_physics/layer_8="UI"
 
+[navigation]
+
+2d/default_cell_size=0.001
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
