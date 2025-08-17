@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8eycnam1yq02"]
+
+[ext_resource type="Texture2D" uid="uid://5374jgo4glkh" path="res://Items/Graphics/DirtHole.png" id="1_11w82"]
+[ext_resource type="Script" uid="uid://wyvhbd1y4ffr" path="res://Sprites/DiggableGround/diggable_ground.gd" id="1_vmmwt"]
+[ext_resource type="Script" uid="uid://dhdvyjo1mhr6a" path="res://Sprites/DiggableGround/ground_sprite.gd" id="3_oaorg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oaorg"]
+radius = 45.2769
+
+[node name="DiggableGround" type="Area2D" groups=["interactable"]]
+script = ExtResource("1_vmmwt")
+
+[node name="GroundSprite" type="Sprite2D" parent="." groups=["interactable"]]
+texture = ExtResource("1_11w82")
+script = ExtResource("3_oaorg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_oaorg")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
