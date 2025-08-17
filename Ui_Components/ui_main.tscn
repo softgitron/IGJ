@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cw1rjnkmhf7xx"]
+[gd_scene load_steps=8 format=3 uid="uid://cw1rjnkmhf7xx"]
 
 [ext_resource type="Script" uid="uid://cw7q20gk5d445" path="res://Ui_Components/ui_main.gd" id="1_kqtj8"]
 [ext_resource type="PackedScene" uid="uid://chyouql1mqmof" path="res://Ui_Components/ui_inventory.tscn" id="1_mfk5n"]
 [ext_resource type="Texture2D" uid="uid://b62k0h6oxy7b3" path="res://Ui_Components/art/ui_background.png" id="2_koif3"]
 [ext_resource type="PackedScene" uid="uid://syju5upvveq7" path="res://Ui_Components/ui_date_time.tscn" id="3_5xhoq"]
+[ext_resource type="PackedScene" uid="uid://hhasyktvnfke" path="res://Ui_Components/police_controller.tscn" id="5_gydas"]
+[ext_resource type="PackedScene" uid="uid://n3ixdyxrpngy" path="res://Ui_Components/info_light.tscn" id="6_qlkyv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gydas"]
+font_size = 32
+font_color = Color(6.61798e-08, 0.20954, 0.16236, 1)
 
 [node name="UiMain" type="CanvasLayer"]
 layer = 8
@@ -35,3 +41,31 @@ offset_bottom = 453.0
 
 [node name="UI_DateTime" parent="Control" instance=ExtResource("3_5xhoq")]
 layout_mode = 1
+
+[node name="PoliceMeter" parent="Control" instance=ExtResource("5_gydas")]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 636.0
+offset_right = 310.0
+offset_bottom = 955.0
+
+[node name="PoliceLevel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 880.0
+offset_right = 234.0
+offset_bottom = 925.0
+text = "0"
+label_settings = SubResource("LabelSettings_gydas")
+horizontal_alignment = 1
+
+[node name="HoldTimer" type="Timer" parent="Control"]
+one_shot = true
+
+[node name="InfoLight" parent="Control" instance=ExtResource("6_qlkyv")]
+offset_left = 151.0
+offset_top = 75.0
+offset_right = 305.0
+offset_bottom = 215.0
+
+[connection signal="timeout" from="Control/HoldTimer" to="." method="_on_hold_timer_timeout"]

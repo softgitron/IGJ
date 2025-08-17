@@ -11,7 +11,21 @@ const PRESENT_COLLISION_ID = 2
 
 var cooldown_remaining = 0
 var current_year = PRESENT_YEAR
+var status="yes"
 signal time_travel(year: int)
+signal tell_travel_status(status: String)
+
+
+func _process(delta: float) -> void:
+
+	if(not cooldown_remaining>0):
+		var bol = scan_for_temporal_anomalies()
+		if(bol):
+			tell_travel_status.emit("no")
+		else:
+			tell_travel_status.emit("yes")	
+	
+	
 
 func emit_time_travel(year_value: int):
 	time_travel.emit(year_value)
@@ -19,6 +33,7 @@ func emit_time_travel(year_value: int):
 func handle_time_travel():
 	if (cooldown_remaining > 0):
 		cooldown_remaining -= 1
+		tell_travel_status.emit("cooldown")
 		return
 	if not Input.is_action_just_released("time_travel"):
 		return

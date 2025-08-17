@@ -2,6 +2,7 @@ extends Area2D
 
 
 func handle_scan():
+	pass
 
 
 # Called when the node enters the scene tree for the first time.
@@ -14,3 +15,4 @@ func _process(delta):
 	pass
 
 func _on_area_entered(area: Area2D) -> void:
+	pass
