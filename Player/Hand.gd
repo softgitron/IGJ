@@ -30,6 +30,10 @@ func handle_use_input():
 	elif interactable_in_range is TeleporterConsole:
 		var teleporterConsole: TeleporterConsole = interactable_in_range
 		item = teleporterConsole.use(item)
+	
+	elif ((interactable_in_range is DiggableGround) and _item == Enums.ITEM_NAMES.SHOVEL):
+		var ground: DiggableGround = interactable_in_range
+		ground.use()
 	emit_signal("inventory_changed",item)
 
 
@@ -38,10 +42,10 @@ func _physics_process(_delta):
 
 
 func _on_area_entered(area: Area2D) -> void:
-	if (area is Table or area is TeleporterConsole):
+	if (area is Table or area is TeleporterConsole or area.is_in_group("interactable")):
 		interactable_in_range = area
 
 
 func _on_area_exited(area: Area2D) -> void:
-	if (area is Table or area is TeleporterConsole):
+	if (area is Table or area is TeleporterConsole or area.is_in_group("interactable")):
 		interactable_in_range = null
