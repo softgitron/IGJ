@@ -14,10 +14,10 @@ var current_year = PRESENT_YEAR
 var status="yes"
 signal time_travel(year: int)
 signal tell_travel_status(status: String)
+signal takes_watch
 
 
 func _process(delta: float) -> void:
-
 	if(not cooldown_remaining>0):
 		var bol = scan_for_temporal_anomalies()
 		if(bol):
@@ -95,7 +95,6 @@ func handle_movement_input():
 		velocity.y -= 1
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-		
 		
 
 

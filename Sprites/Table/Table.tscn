@@ -1,7 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dc6co7mbuk18k"]
+[gd_scene load_steps=6 format=3 uid="uid://dc6co7mbuk18k"]
 
 [ext_resource type="Script" uid="uid://c6pmw8m18x5rc" path="res://Sprites/Table/Table.gd" id="1_mbq66"]
 [ext_resource type="Texture2D" uid="uid://dxmhysuwbpro3" path="res://Sprites/Table/Table.png" id="2_oxiak"]
+
+[sub_resource type="Shader" id="Shader_oxiak"]
+code = "shader_type canvas_item;
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mbq66"]
+shader = SubResource("Shader_oxiak")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bfbny"]
 radius = 16.0
@@ -10,6 +17,7 @@ radius = 16.0
 script = ExtResource("1_mbq66")
 
 [node name="BaseSprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_mbq66")
 texture = ExtResource("2_oxiak")
 
 [node name="ItemDisplayer" type="Sprite2D" parent="."]

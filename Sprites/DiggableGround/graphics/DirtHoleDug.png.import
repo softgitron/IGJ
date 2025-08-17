@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t4yqawihhu70"
-path="res://.godot/imported/SHOVEL.png-92fcae86fe3f91c74a73daf4b0de1019.ctex"
+uid="uid://byww2i7eov0f0"
+path="res://.godot/imported/DirtHoleDug.png-4152fe5e84db7113a584882520b24be6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ui_Components/art/inventory_sprites/SHOVEL.png"
-dest_files=["res://.godot/imported/SHOVEL.png-92fcae86fe3f91c74a73daf4b0de1019.ctex"]
+source_file="res://Sprites/DiggableGround/graphics/DirtHoleDug.png"
+dest_files=["res://.godot/imported/DirtHoleDug.png-4152fe5e84db7113a584882520b24be6.ctex"]
 
 [params]
 

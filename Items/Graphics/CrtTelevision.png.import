@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t4yqawihhu70"
-path="res://.godot/imported/SHOVEL.png-92fcae86fe3f91c74a73daf4b0de1019.ctex"
+uid="uid://by2tbki5a1gp6"
+path="res://.godot/imported/CrtTelevision.png-88c492b86eb31c90ddd54c5437e04758.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ui_Components/art/inventory_sprites/SHOVEL.png"
-dest_files=["res://.godot/imported/SHOVEL.png-92fcae86fe3f91c74a73daf4b0de1019.ctex"]
+source_file="res://Items/Graphics/CrtTelevision.png"
+dest_files=["res://.godot/imported/CrtTelevision.png-88c492b86eb31c90ddd54c5437e04758.ctex"]
 
 [params]
 

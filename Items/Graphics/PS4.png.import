@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t4yqawihhu70"
-path="res://.godot/imported/SHOVEL.png-92fcae86fe3f91c74a73daf4b0de1019.ctex"
+uid="uid://b6ys6uh8dhc7o"
+path="res://.godot/imported/PS4.png-e2254705b9ba7ef0479611b872d3f72c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ui_Components/art/inventory_sprites/SHOVEL.png"
-dest_files=["res://.godot/imported/SHOVEL.png-92fcae86fe3f91c74a73daf4b0de1019.ctex"]
+source_file="res://Items/Graphics/PS4.png"
+dest_files=["res://.godot/imported/PS4.png-e2254705b9ba7ef0479611b872d3f72c.ctex"]
 
 [params]
 
