@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ce0j2rxxhsci4" path="res://Sprites/Teleporter/Teleporter.gd" id="1_gq1br"]
 [ext_resource type="Texture2D" uid="uid://djxip0jsx0nnl" path="res://Sprites/Teleporter/Graphics/TeeleporterOn.png" id="2_hj3kf"]
-[ext_resource type="Script" uid="uid://b8gxlgufxnb0y" path="res://Sprites/Teleporter/TeleporterSprite.gd" id="3_28sk7"]
+[ext_resource type="Script" path="res://Sprites/Teleporter/TeleporterSprite.gd" id="3_28sk7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eumkw"]
 radius = 20.0
